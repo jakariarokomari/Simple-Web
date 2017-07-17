@@ -1,4 +1,4 @@
-package com.mkyong.model;
+package com.simpleweb.model;
 
 /**
  * Created by Jakaria on 7/16/2017.

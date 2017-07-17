@@ -1,6 +1,6 @@
-package com.mkyong.repository;
+package com.simpleweb.repository;
 
-import com.mkyong.model.ContactUs;
+import com.simpleweb.model.Post;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
  * Created by Jakaria on 7/17/2017.
  */
 @Repository
-public interface ContactUsRepository extends CrudRepository<ContactUs, Integer> {
+public interface PostRepository extends CrudRepository<Post, Integer> {
 }

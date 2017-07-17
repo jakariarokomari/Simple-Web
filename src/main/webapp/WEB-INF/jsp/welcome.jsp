@@ -40,6 +40,7 @@
                     <nav class="overlay-menu">
                         <ul>
                             <li ><a href="<c:url value="/" />">Home</a></li>
+                            <li><a href="<c:url value="/post" />">Post</a></li>
                             <li><a href="<c:url value="/contactus" />">Contacts</a></li>
                         </ul>
                     </nav>
@@ -48,6 +49,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav  navbar-right navbar-menus">
                         <li class="active"><a href="<c:url value="/" />">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="<c:url value="/post" />">Post</a></li>
                         <li><a href="<c:url value="/contactus" />">Contacts</a></li>
                     </ul>
                 </div>

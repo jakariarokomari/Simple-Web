@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="pagetitle" value="Contact Me"></c:set>
+<c:set var="pagetitle" value="Post submit"></c:set>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact me</title>
+    <title>Post submit</title>
     <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -50,26 +50,20 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav  navbar-right navbar-menus">
                         <li><a href="<c:url value="/" />">Home <span class="sr-only">(current)</span></a></li>
-                        .<li><a href="<c:url value="/post" />">Post</a></li>
-                        <li class="active"><a href="<c:url value="/contactus" />">Contacts</a></li>
+                        <li class="active"><a href="<c:url value="/post" />">Post</a></li>
+                        <li><a href="<c:url value="/contactus" />">Contacts</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 <%--<%@ include file="header.jsp" %>--%>
 <div class="container" style="width: 800px">
-    <form action="<c:url value="/contactus/save"/>" method="post" >
-
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..">
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" name="phone" placeholder="Your phone..">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email..">
-        <label for="message">Subject</label>
-        <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+    <form action="<c:url value="/post/save"/>" method="post" >
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Your post title..">
+        <label for="details">Details</label>
+        <textarea id="details" name="details" placeholder="Write something.." style="height:200px"></textarea>
         <input type="submit" value="Submit">
-
     </form>
 </div>
 </div>

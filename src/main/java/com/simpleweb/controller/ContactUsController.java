@@ -1,7 +1,7 @@
-package com.mkyong.controller;
+package com.simpleweb.controller;
 
-import com.mkyong.model.ContactUs;
-import com.mkyong.service.ContactUsService;
+import com.simpleweb.model.ContactUs;
+import com.simpleweb.service.ContactUsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +18,11 @@ public class ContactUsController {
     private ContactUsService contactUsService;
 
     private static final String VIEW_PATH = "/";
-    private static final String CONTACT_PART = VIEW_PATH+"contactus";
+    private static final String CONTACT_US = VIEW_PATH+"contactus";
 
     @RequestMapping(value = "")
     public String contactUS(){
-        return CONTACT_PART;
+        return CONTACT_US;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -32,6 +32,6 @@ public class ContactUsController {
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "redirect:"+CONTACT_PART;
+        return "redirect:"+CONTACT_US;
     }
 }
