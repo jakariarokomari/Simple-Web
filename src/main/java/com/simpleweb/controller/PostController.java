@@ -19,6 +19,7 @@ public class PostController {
 
     private static final String VIEW_PATH = "/";
     private static final String POST_FROM = VIEW_PATH+"postadd";
+    private static final String POST_LIST = VIEW_PATH+"admin/post/list";
 
     @RequestMapping(value = "")
     public String post(){
@@ -32,7 +33,7 @@ public class PostController {
         } catch (Exception e){
             e.printStackTrace();
         }
-        return "redirect:"+POST_FROM;
+        return "redirect:/post";
     }
 
 }

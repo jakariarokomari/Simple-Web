@@ -1,8 +1,10 @@
 com\simpleweb\service\ContactUsService.class
+com\simpleweb\controller\AdminController.class
+com\simpleweb\repository\ContactUsRepository.class
+com\simpleweb\model\Post$Status.class
 com\simpleweb\controller\PostController.class
 com\simpleweb\model\Comment.class
 com\simpleweb\SpringBootWebApplication.class
-com\simpleweb\repository\ContactUsRepository.class
 com\simpleweb\service\PostService.class
 com\simpleweb\controller\ContactUsController.class
 com\simpleweb\model\Post.class
@@ -10,5 +12,4 @@ com\simpleweb\controller\WelcomeController.class
 com\simpleweb\repository\PostRepository.class
 com\simpleweb\controller\AboutController.class
 com\simpleweb\model\ContactUs.class
-com\simpleweb\model\Post$Status.class
 com\simpleweb\model\Comment$Status.class

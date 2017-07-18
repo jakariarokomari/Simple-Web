@@ -16,9 +16,9 @@ import java.util.Date;
 public class Comment {
     public enum Status {ACTIVE, INACTIVE}
 
-    private int id;
-    private int userId;
-    private int postId;
+    private Long id;
+    private Long userId;
+    private Long postId;
     private int positiveVote;
     private int negativeVote;
     private String content;
@@ -28,31 +28,33 @@ public class Comment {
 
     private Post post;
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", unique = true)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
     @Column(name = "post_id", insertable = false, updatable = false)
-    public int getPostId() {
+
+    public Long getPostId() {
         return postId;
     }
 
-    public void setPostId(int postId) {
+    public void setPostId(Long postId) {
         this.postId = postId;
     }
 

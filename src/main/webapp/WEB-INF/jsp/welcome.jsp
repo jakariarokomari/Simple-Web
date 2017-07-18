@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="pagetitle" value="Welcome"></c:set>
 <html lang="en">
 <head>
@@ -64,63 +65,70 @@
                 <div class='hero-slider-content'>
                     <img src="images/banner.jpg" alt="Banner image">
                 </div>
-                <div class='hero-slider-content'>
-                    <img src="images/banner.jpg" alt="Banner image">
-                </div>
-                <div class='hero-slider-content'>
-                    <img src="images/banner.jpg" alt="Banner image">
-                </div>
-                <div class='hero-slider-content'>
-                    <img src="images/banner.jpg" alt="Banner image">
-                </div>
+                <%--<div class='hero-slider-content'>--%>
+                    <%--<img src="images/banner.jpg" alt="Banner image">--%>
+                <%--</div>--%>
+                <%--<div class='hero-slider-content'>--%>
+                    <%--<img src="images/banner.jpg" alt="Banner image">--%>
+                <%--</div>--%>
+                <%--<div class='hero-slider-content'>--%>
+                    <%--<img src="images/banner.jpg" alt="Banner image">--%>
+                <%--</div>--%>
             </div>
         </div>
     </div>
 
     <div class="services">
         <div class="row">
+            <c:forEach items="${posts}" var="post" varStatus="i">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 service-block">
                 <div class="service-heading">
                     <div class="service-serial">
-                        <span>01</span>
+                        <span>${i.index+1}</span>
                     </div>
                     <h1 class="service-name">
-                        Title Goes Here
+                        <c:set var ="title" value="${fn:substring(post.title,0 ,20)}"/>
+                        ${title}
                     </h1>
                 </div>
 
                 <ul class="service-list">
-                    <li>Many desktop publishing packages and web page editors</li>
-                    <li>There are many variations of passages of Lorem Ipsum available</li>
-                    <li>Lorem Ipsum is simply dummy text of the printing</li>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                    <li>
+                        <c:set var ="details" value="${fn:substring(post.details,0 ,200 )}"/>
+                        ${details}
+                        <c:set var ="length" value="${fn:length(post.details)}"/>
+                    </li>
                 </ul>
 
+                <c:if test="${length >100}">
                 <a href="#" class="service-read-more">
                     Read More
                 </a>
+                </c:if>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="service-heading">
-                    <div class="service-serial">
-                        <span>02</span>
-                    </div>
-                    <h1 class="service-name">
-                        Title Goes Here
-                    </h1>
-                </div>
+            </c:forEach>
 
-                <ul class="service-list">
-                    <li>Lorem Ipsum is simply dummy text of the printing</li>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                    <li>Many desktop publishing packages and web page editors</li>
-                    <li>There are many variations of passages of Lorem Ipsum available</li>
-                </ul>
+            <%--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">--%>
+                <%--<div class="service-heading">--%>
+                    <%--<div class="service-serial">--%>
+                        <%--<span>02</span>--%>
+                    <%--</div>--%>
+                    <%--<h1 class="service-name">--%>
+                        <%--Title Goes Here--%>
+                    <%--</h1>--%>
+                <%--</div>--%>
 
-                <a href="#" class="service-read-more">
-                    Read More
-                </a>
-            </div>
+                <%--<ul class="service-list">--%>
+                    <%--<li>Lorem Ipsum is simply dummy text of the printing</li>--%>
+                    <%--<li>Contrary to popular belief, Lorem Ipsum is not simply</li>--%>
+                    <%--<li>Many desktop publishing packages and web page editors</li>--%>
+                    <%--<li>There are many variations of passages of Lorem Ipsum available</li>--%>
+                <%--</ul>--%>
+
+                <%--<a href="#" class="service-read-more">--%>
+                    <%--Read More--%>
+                <%--</a>--%>
+            <%--</div>--%>
         </div>
     </div>
 
